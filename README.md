@@ -31,6 +31,7 @@ pnpm install     # 或 npm install
 pnpm dev         # 开发服务器，默认 http://localhost:5188
 pnpm test        # 手势与镜片几何测试
 pnpm build       # 生产构建，输出 dist/
+pnpm build:pages # GitHub Pages 构建，输出 dist/，使用仓库子路径和 hash 路由
 pnpm preview     # 预览构建结果
 ```
 
@@ -50,7 +51,9 @@ pnpm preview     # 预览构建结果
 | 泰拉地图 | `/map`、`/locations/:locationId` |
 | 塞壬唱片 / 游戏图集 | `/music`、`/gallery` |
 
-部署为静态站点时需要把未知路径回退到 `index.html`（Netlify/Vercel 的 SPA 重写；Nginx `try_files $uri /index.html`）。
+GitHub Pages 独立站点入口：<https://yakumo-sue.github.io/ArkNights-Story/>。工作流在每次推送到 `main` 后测试、构建并发布，使用 `/#/overview` 等 hash 地址以支持刷新，详见 [Pages 部署说明](docs/GITHUB_PAGES.md)。
+
+普通 `pnpm build` 部署到其他静态平台时需要把未知路径回退到 `index.html`（Netlify/Vercel 的 SPA 重写；Nginx `try_files $uri /index.html`）。
 
 ## 已实现的需求要点
 

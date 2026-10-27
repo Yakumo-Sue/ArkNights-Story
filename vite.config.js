@@ -1,16 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// 单页应用：所有页面路由由 React Router 处理。
-// 生产部署时需把未知路径回退到 index.html（见 README 的部署说明）。
-export default defineConfig({
+// Pages 项目站点使用仓库子路径；本地开发及其他生产构建仍从 / 提供。
+export default defineConfig(({ mode }) => ({
+  base: mode === 'github-pages' ? '/ArkNights-Story/' : '/',
   plugins: [react()],
   server: {
     port: 5188,
     strictPort: false,
   },
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     chunkSizeWarningLimit: 1200,
   },
-})
+}))
