@@ -1,0 +1,747 @@
+/* ============================================================
+   响应式：桌面优先，向平板与手机收敛
+   ============================================================ */
+
+@media (max-width: 1280px) {
+  .ov-hero {
+    grid-template-columns: minmax(0, 1.4fr) minmax(330px, 1fr);
+  }
+  .relations-body {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+  .map-body {
+    grid-template-columns: minmax(0, 1fr) 360px;
+  }
+  .music-layout {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .world-layout {
+    grid-template-columns: 258px minmax(0, 1fr);
+  }
+  .world-figure {
+    width: 44%;
+    margin-left: 26px;
+  }
+  .more-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .more-col + .more-col {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    margin-top: 18px;
+  }
+  .gallery-grid {
+    column-count: 2;
+  }
+  .relations-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .person-panel {
+    height: auto;
+    max-height: none;
+    border-top: 1px solid var(--line);
+  }
+  .map-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .location-panel {
+    height: auto;
+    max-height: none;
+    border-top: 1px solid var(--line);
+  }
+  .person-body {
+    grid-template-columns: minmax(0, 1fr) 260px;
+  }
+}
+
+@media (max-width: 960px) {
+  .brand-sub,
+  .brand-divider {
+    display: none;
+  }
+  .primary-nav {
+    gap: 20px;
+  }
+  .page-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .page-head-side {
+    justify-content: flex-start;
+  }
+  .ov-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ov-hero-art {
+    min-height: 250px;
+  }
+  .ov-hero-artshade {
+    background:
+      linear-gradient(180deg, rgba(6, 9, 12, 0.52) 0%, transparent 30%),
+      linear-gradient(90deg, rgba(6, 9, 12, 0.62) 0%, transparent 62%, rgba(11, 14, 17, 0.72) 100%),
+      linear-gradient(0deg, rgba(11, 14, 17, 0.95) 0%, transparent 55%);
+  }
+  .ov-hero-info {
+    padding: 22px var(--page-pad) 26px;
+  }
+  .ov-hero-tabs {
+    top: 14px;
+  }
+  .ov-year {
+    font-size: clamp(42px, 9vw, 64px);
+  }
+  .ov-event-summary {
+    -webkit-line-clamp: 4;
+  }
+  .world-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .world-side {
+    display: none;
+  }
+  .world-figure {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .world-figure > .scene {
+    height: 240px;
+  }
+  .person-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .person-aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .person-aside section {
+    margin-bottom: 0;
+  }
+  .music-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .music-list {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 16px;
+  }
+  .music-list ul {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .music-player {
+    padding: 20px 0 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .primary-nav {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+  .header-tool-text {
+    display: none;
+  }
+  .header-tool {
+    width: 34px;
+    justify-content: center;
+    padding: 0;
+  }
+  .site-header-inner {
+    gap: 12px;
+  }
+  .ark-brand-logo {
+    width: 120px;
+    max-height: 46px;
+  }
+  .ov-track {
+    height: 104px;
+  }
+  .track-line {
+    top: 62px;
+  }
+  .tick {
+    top: 62px;
+  }
+  .tnode {
+    top: 62px;
+  }
+  .ov-chips-label {
+    width: 78px;
+  }
+  .ov-entries {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .entry-card {
+    min-height: 148px;
+  }
+  .entry-art {
+    max-width: 320px;
+  }
+  .gallery-grid {
+    column-count: 2;
+  }
+  .footer-meta,
+  .footer-link {
+    display: none;
+  }
+  .person-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .person-hero-art {
+    max-width: 220px;
+  }
+  .person-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-h: 60px;
+  }
+  body {
+    font-size: 14px;
+  }
+  .ark-brand-logo {
+    width: 112px;
+    max-height: 42px;
+  }
+  .page-head {
+    padding: 22px var(--page-pad) 16px;
+  }
+  .page-head-main h1 {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+  .page-lede {
+    font-size: 12.5px;
+  }
+  .page-footnote {
+    margin: 26px var(--page-pad) 40px;
+  }
+
+  /* 首页 */
+  .intro-stage {
+    padding: calc(var(--header-h) + 10px) 18px calc(var(--footer-h) + 60px);
+    justify-content: flex-start;
+    padding-top: calc(var(--header-h) + 56px);
+  }
+  .intro-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .intro-mark-slot {
+    width: min(58vw, 230px);
+  }
+  .intro-copy {
+    text-align: center;
+  }
+  .intro-title {
+    font-size: clamp(50px, 16vw, 72px);
+  }
+  .intro-latin {
+    letter-spacing: 0.4em;
+    margin-top: 10px;
+  }
+  .intro-sub-cn {
+    margin-top: 14px;
+    letter-spacing: 0.3em;
+  }
+  .intro-corner-tl {
+    display: none;
+  }
+  .intro-controls {
+    top: calc(var(--header-h) + 12px);
+  }
+  .intro-footnote {
+    left: 18px;
+    bottom: calc(var(--footer-h) + 8px);
+    font-size: 8px;
+  }
+  .intro-enter {
+    bottom: calc(var(--footer-h) + 18px);
+  }
+
+
+  /* 总览 */
+  .ov-hero-art {
+    min-height: 230px;
+  }
+  .ov-hero-titles {
+    left: 16px;
+    top: 16px;
+  }
+  .ov-hero-titles h1 {
+    font-size: 22px;
+  }
+  .ov-hero-tabs {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 12px;
+    top: auto;
+    padding: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ov-spoiler-btn {
+    display: none;
+  }
+  .ov-script-hint {
+    flex: 1 0 100%;
+  }
+  .ov-hero-tabs .segmented-item {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  .ov-hero-info {
+    padding-top: 14px;
+  }
+  .ov-event-title {
+    font-size: 21px;
+  }
+  .ov-event-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ov-event-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .ov-event-actions .ov-script-hint {
+    grid-column: 1 / -1;
+  }
+  .ov-filterbar {
+    gap: 7px;
+    padding: 8px var(--page-pad);
+  }
+  .ov-typechips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+  .ov-typechips::-webkit-scrollbar {
+    display: none;
+  }
+  .ov-search {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .ov-result-count {
+    order: 5;
+  }
+  .chip-undated {
+    margin-left: 0;
+  }
+  .ov-timeline-head {
+    gap: 8px;
+  }
+  .ov-axis-title {
+    min-width: 70px;
+  }
+  .ov-jump {
+    display: none;
+  }
+  .ov-track-nav,
+  .ov-zoom {
+    padding-left: 0;
+    border-left: none;
+  }
+  .ov-track {
+    height: 96px;
+  }
+  .ov-track-preview {
+    font-size: 9px;
+    gap: 7px;
+  }
+  .ov-chips {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ov-chips-label {
+    width: 100%;
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .ov-mini-hint {
+    display: none;
+  }
+  .entry-art-people {
+    height: 74px;
+    max-width: 260px;
+  }
+
+  /* 设定 */
+  .world-topbar {
+    padding: 12px 18px;
+    flex-wrap: wrap;
+  }
+  .world-article {
+    padding: 18px 18px 50px;
+  }
+  .world-title h1 {
+    font-size: clamp(36px, 12vw, 52px);
+  }
+  .world-lead {
+    font-size: 13.5px;
+    line-height: 1.9;
+    margin-top: 28px;
+  }
+  .world-copy {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .world-story-list,
+  .world-related-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .world-source dl {
+    grid-template-columns: 1fr 1fr;
+  }
+  .world-figure > .scene {
+    height: 200px;
+  }
+
+  /* 其他 */
+  .more-split {
+    padding: 0 14px 20px;
+  }
+  .more-col {
+    padding: 16px 6px 8px;
+  }
+  .more-music-stage {
+    height: 210px;
+  }
+  .more-gallery-grid {
+    gap: 8px;
+  }
+  .section-label-cn {
+    font-size: 30px;
+  }
+
+  /* 干员 */
+  .operator-grid {
+    grid-template-columns: repeat(auto-fill, minmax(142px, 1fr));
+  }
+  .op-toolbar {
+    gap: 8px;
+  }
+  .select-wrap {
+    flex: 1 1 46%;
+    justify-content: space-between;
+  }
+  .select-wrap select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* 图谱 */
+  .graph-wrap {
+    height: 58vh;
+    min-height: 380px;
+  }
+  .graph-legend {
+    display: none;
+  }
+  .rel-count {
+    margin-left: 0;
+  }
+  .relation-table {
+    min-width: 720px;
+  }
+
+  /* 地图 */
+  .map-canvas {
+    height: 58vh;
+    min-height: 380px;
+  }
+  .map-caption {
+    display: none;
+  }
+  .map-layers {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+  .map-layers::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 人物 */
+  .person-hero {
+    padding: 16px var(--page-pad) 24px;
+  }
+  .person-hero-art {
+    max-width: 170px;
+  }
+  .person-hero-info h1 {
+    font-size: 38px;
+  }
+  .person-meta {
+    gap: 8px;
+  }
+  .appearance-item {
+    grid-template-columns: 22px 48px minmax(0, 1fr) 16px;
+  }
+  .appearance-badge,
+  .appearance-type {
+    display: none;
+  }
+  .person-aside {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* 音乐 */
+  .player-stage {
+    height: 220px;
+  }
+  .album-cover {
+    width: min(66%, 230px);
+  }
+  .player-now {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .now-controls {
+    flex-wrap: wrap;
+  }
+  .player-volume {
+    margin-left: 0;
+  }
+
+  /* 图集 */
+  .gallery-grid {
+    column-count: 1;
+    padding: 12px var(--page-pad) 26px;
+  }
+  .gallery-toolbar {
+    gap: 10px;
+  }
+  .lightbox-inner {
+    width: 96vw;
+  }
+  .lightbox-stage {
+    max-height: 52vh;
+  }
+  .lightbox-nav {
+    width: 34px;
+    height: 50px;
+  }
+
+  /* 播放器 */
+  .play-topbar {
+    height: 46px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .play-chapter {
+    display: none;
+  }
+  .play-story {
+    font-size: 13px;
+  }
+  .play-top-actions .icon-btn:nth-child(3) {
+    display: none;
+  }
+  .play-stage {
+    width: 100%;
+    height: calc(100dvh - 166px);
+    min-height: 430px;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+  .stage-overlay {
+    padding: 10px;
+  }
+  .start-card,
+  .choice-panel,
+  .end-card {
+    max-height: calc(100% - 6px);
+  }
+  .start-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .start-foot {
+    display: none;
+  }
+  .dialogue {
+    left: 3%;
+    right: 3%;
+    bottom: 58px;
+    padding: 12px 14px 24px;
+    min-height: 118px;
+  }
+  .dialogue-text {
+    font-size: 13px;
+    line-height: 1.8;
+    min-height: 3.2em;
+  }
+  .speaker-name {
+    font-size: 15px;
+  }
+  .stage-sprite {
+    width: 44%;
+    right: 2%;
+    height: 82%;
+    opacity: 0.92;
+  }
+  .play-controls {
+    gap: 4px;
+    padding: 4px 8px;
+  }
+  .play-progress {
+    width: 92px;
+  }
+  .ctrl {
+    padding: 0 6px;
+    font-size: 9px;
+  }
+  .volume-range {
+    width: 44px;
+  }
+  .start-card,
+  .choice-panel {
+    padding: 20px 18px;
+  }
+  .play-underbar {
+    padding: 8px 12px;
+  }
+  .play-missing {
+    padding: 26px 18px;
+  }
+
+  /* 页脚 */
+  .site-footer-inner {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .pager-label {
+    display: none;
+  }
+  .pager-bar {
+    width: 26px;
+  }
+  .mini-player {
+    left: 12px;
+    right: 12px;
+    bottom: calc(var(--footer-h) + 8px);
+    width: auto;
+  }
+  .mini-desktop-only {
+    display: none;
+  }
+
+  /* 弹层 */
+  .drawer {
+    width: 100vw;
+    border-left: none;
+  }
+  .modal {
+    max-height: 90vh;
+  }
+  .modal-body {
+    padding: 16px;
+  }
+  .search-overlay {
+    padding: 8vh 12px 30px;
+  }
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .ov-typechips .chip {
+    padding: 0 9px;
+    font-size: 10.5px;
+  }
+  .btn {
+    padding: 0 12px;
+    font-size: 11.5px;
+  }
+  .play-progress {
+    display: none;
+  }
+  .control-group-right .volume-range {
+    display: none;
+  }
+}
+
+/* 横屏沉浸（播放器） */
+@media (max-height: 560px) and (orientation: landscape) {
+  .app-shell.is-player .site-footer,
+  .app-shell.is-player .site-header {
+    display: none;
+  }
+  .app-shell.is-player .app-main {
+    padding-top: 0;
+  }
+  .play-stage {
+    width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+    aspect-ratio: auto;
+  }
+  .play-topbar,
+  .play-underbar {
+    display: none;
+  }
+  .dialogue {
+    bottom: 44px;
+  }
+}
+
+
+/* 15-15 panorama: readable full cast on narrow screens, using the original L/R panels. */
+@media (max-width: 600px) {
+  .intro-panorama {
+    top: calc(var(--header-h) + 8px);
+    left: 50%;
+    width: min(100%, 480px);
+    transform: translateX(-50%);
+    aspect-ratio: auto;
+    display: block;
+    mask-image: linear-gradient(180deg, transparent, #000 5%, #000 78%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 5%, #000 78%, transparent);
+  }
+  /* Each viewport covers 60% of the joined CG; 20% overlap keeps the central figure whole. */
+  .intro-panorama-strip { width: calc(500% / 3); }
+  .intro-panorama-row.is-continuation { display: block; margin-top: 2px; }
+  .intro-panorama-row.is-continuation .intro-panorama-strip { transform: translateX(-40%); }
+  .intro-main {
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(14px, 4vw, 24px);
+    margin-top: clamp(220px, 65vw, 290px);
+    transform: none;
+    text-align: left;
+  }
+  .intro-mark-slot { width: clamp(82px, 22vw, 132px); }
+  .intro-copy { text-align: left; min-width: 0; padding-bottom: 0; }
+  .intro-title { font-size: clamp(36px, 10vw, 60px); white-space: nowrap; }
+  .intro-latin { letter-spacing: .45em; font-size: 10px; }
+  .intro-sub-cn { font-size: 15px; margin-top: 18px; }
+  .intro-sub-en { font-size: 7px; letter-spacing: .22em; }
+}
+@media (max-width: 600px) and (max-height: 640px) {
+  .intro-main { margin-top: clamp(180px, 50vw, 220px); }
+}

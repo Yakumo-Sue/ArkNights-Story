@@ -1,0 +1,384 @@
+/* ============================================================
+   首页：巴别塔 → 镜面破碎 → 罗德岛揭示
+   ============================================================ */
+
+.home-page {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 560px;
+  background: var(--bg-deep);
+}
+
+.home-intro {
+  height: 100%;
+  overflow: hidden;
+}
+
+.intro-stage {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--header-h) + 16px) var(--page-pad) calc(var(--footer-h) + 46px);
+  isolation: isolate;
+}
+
+.intro-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 52% 22%, #344655 0, #17242f 33%, #090f15 65%, #05090e 100%);
+}
+
+/* Keep the two original CG panels together, without stretching the panorama. */
+.intro-panorama {
+  position: absolute;
+  top: calc(var(--header-h) + clamp(16px, 4svh, 52px));
+  left: 0;
+  width: 100%;
+  aspect-ratio: 16 / 3;
+  opacity: .88;
+  filter: saturate(.8);
+  mask-image: linear-gradient(180deg, transparent, #000 7%, #000 74%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 7%, #000 74%, transparent);
+  pointer-events: none;
+}
+
+.intro-panorama-row { width: 100%; overflow: hidden; }
+.intro-panorama-strip { display: flex; width: 100%; align-items: flex-start; }
+.intro-panorama-row.is-continuation { display: none; }
+
+.intro-bg {
+  display: block;
+  width: 50%;
+  height: auto;
+  min-width: 0;
+  aspect-ratio: 8 / 3;
+  object-fit: contain;
+}
+
+.intro-atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 8, 12, .12), transparent 28%, rgba(4, 9, 14, .32) 48%, rgba(3, 8, 12, .72) 100%),
+    linear-gradient(90deg, rgba(4, 9, 14, .16), transparent 50%, rgba(4, 9, 14, .12));
+  pointer-events: none;
+}
+
+.intro-main {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 7.6vw, 110px);
+  padding-left: clamp(0px, 12.8vw, 184px);
+  transform: translateY(clamp(50px, 9svh, 100px));
+}
+
+/* Canvas 铺满舞台：徽记、裂纹与镜片都由它绘制，标题仍在上层 */
+.intro-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* 占位：让标题落在最终构图的位置，Canvas 按它的矩形落位 */
+.intro-mark-slot {
+  flex: none;
+  width: clamp(230px, 23.6vw, 340px);
+  aspect-ratio: 254 / 215;
+  pointer-events: none;
+}
+
+.intro-copy {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.intro-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(62px, 8.6vw, 136px);
+  line-height: 0.92;
+  letter-spacing: 0.05em;
+  color: #f5f8f9;
+  text-shadow: 0 0 70px rgba(220, 235, 245, 0.14);
+}
+
+.intro-latin {
+  margin-top: 16px;
+  font-size: clamp(10px, 1vw, 14px);
+  letter-spacing: 0.52em;
+  color: #c8d4dc;
+  font-weight: 400;
+}
+
+.intro-sub-cn {
+  margin-top: 22px;
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.5vw, 21px);
+  letter-spacing: 0.4em;
+  color: #dde5ea;
+}
+
+.intro-sub-en {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 0.42em;
+  color: #8a98a3;
+}
+
+/* ---------------- 角落信息 ---------------- */
+.intro-corner-tl {
+  position: absolute;
+  left: var(--page-pad);
+  top: calc(var(--header-h) + 26px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 8.5px;
+  letter-spacing: 0.3em;
+  color: rgba(190, 205, 215, 0.5);
+}
+
+.intro-corner-rule {
+  width: 62px;
+  height: 1px;
+  background: rgba(190, 205, 215, 0.25);
+}
+
+.intro-footnote {
+  position: absolute;
+  left: var(--page-pad);
+  bottom: calc(var(--footer-h) + 12px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: rgba(160, 176, 186, 0.55);
+}
+
+.intro-footnote-rule {
+  width: 24px;
+  height: 1px;
+  background: rgba(160, 176, 186, 0.35);
+}
+
+/* ---------------- 控制 ---------------- */
+.intro-controls {
+  position: absolute;
+  right: var(--page-pad);
+  top: calc(var(--header-h) + 20px);
+}
+
+.intro-skip,
+.intro-replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 12px 0 13px;
+  border: 1px solid rgba(232, 236, 239, 0.22);
+  color: #c3cfd7;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  background: rgba(6, 9, 12, 0.35);
+  backdrop-filter: blur(6px);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.intro-skip:hover,
+.intro-replay:hover {
+  color: #fff;
+  border-color: var(--accent-line);
+}
+
+.intro-enter {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--footer-h) + 22px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #cfdae1;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+}
+
+.intro-enter-text {
+  object-fit: cover;
+  object-position: center 44%;
+  opacity: 0.76;
+  filter: saturate(0.72);
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.intro-enter:hover .intro-enter-text {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.intro-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-chevrons i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.75;
+}
+
+.intro-chevrons i:last-child {
+  margin-top: -8px;
+  opacity: 0.45;
+}
+
+.intro-chevrons i {
+  animation: chevBob 2.4s var(--ease) infinite;
+}
+
+.intro-chevrons i:last-child {
+  animation-delay: 0.12s;
+}
+
+@keyframes chevBob {
+  0%,
+  100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: rotate(45deg) translate(2px, 2px);
+    opacity: 0.9;
+  }
+}
+
+.intro-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #a7cce7 3px 4px);
+  mix-blend-mode: soft-light;
+}
+.intro-static-mark { width: 100%; height: 100%; object-fit: contain; }
+.is-running .intro-static-mark { visibility: hidden; }
+.is-done .intro-canvas { visibility: hidden; }
+.intro-footnote a { display: inline-flex; align-items: center; gap: 5px; }
+.intro-footnote a:hover { color: #d6e7ef; }
+.intro-controls, .intro-footnote, .intro-enter { z-index: 5; }
+
+/* ---------------- 动画：与解码完成后的 Canvas 时钟同时起步 ---------------- */
+.is-running.is-ready .intro-title {
+  animation: titleIn 0.62s var(--ease-out) 3.45s both;
+}
+
+.is-running.is-ready .intro-latin {
+  animation: fadeUp 0.52s var(--ease-out) 3.68s both;
+}
+
+.is-running.is-ready .intro-sub-cn {
+  animation: fadeUp 0.52s var(--ease-out) 3.85s both;
+}
+
+.is-running.is-ready .intro-sub-en {
+  animation: fadeUp 0.5s var(--ease-out) 4.02s both;
+}
+
+.is-running.is-ready .intro-enter {
+  animation: fadeIn 0.7s var(--ease-out) 4.02s both;
+}
+
+.is-running .intro-corner-tl,
+.is-running .intro-footnote {
+  animation: fadeIn 0.9s ease-out 0.1s both;
+}
+
+.is-running .intro-controls {
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes titleIn {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(22px);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------------- 减少动态效果 ---------------- */
+.is-reduced.is-running.is-ready .intro-title,
+.is-reduced.is-running.is-ready .intro-latin,
+.is-reduced.is-running.is-ready .intro-sub-cn,
+.is-reduced.is-running.is-ready .intro-sub-en,
+.is-reduced.is-running.is-ready .intro-enter,
+.is-reduced.is-running .intro-corner-tl,
+.is-reduced.is-running .intro-footnote,
+.is-reduced.is-running .intro-controls {
+  animation: fadeIn 0.35s ease-out both !important;
+}
+
+
+
+
+
+
+.is-running.is-loading .intro-copy,
+.is-running.is-loading .intro-enter { opacity: 0; }
+.is-paused .intro-title, .is-paused .intro-latin, .is-paused .intro-sub-cn,
+.is-paused .intro-sub-en, .is-paused .intro-enter, .is-paused .intro-chevrons i {
+  animation-play-state: paused;
+}
+@media (max-width: 680px) {
+  .intro-atmosphere { background: linear-gradient(180deg, #03080b12, #03080b24 40%, #03080bb8); }
+  .intro-footnote { flex-wrap: wrap; max-width: 65%; gap: 5px 8px; letter-spacing: .04em; }
+  .intro-footnote-rule { display: none; }
+  .intro-enter-text { font-size: 10px; letter-spacing: .1em; }
+}
+@media (max-height: 680px) and (min-width: 681px) {
+  .intro-mark-slot { width: 240px; }
+  .intro-title { font-size: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-chevrons i { animation: none; }
+}

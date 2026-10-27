@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B0E11" />
+    <meta
+      name="description"
+      content="明日方舟剧情档案（非官方）：泰拉时间轴、独立剧情播放器、关系图谱、泰拉地图与六章世界观设定。"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>罗德岛剧情档案 · 非官方 | RHODES ISLAND STORY ARCHIVE</title>
+    <script>
+      // 在首帧前标记输入方式与动效偏好，避免样式跳动
+      (function () {
+        var root = document.documentElement
+        root.classList.add('js')
+        try {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            root.classList.add('reduce-motion')
+          }
+        } catch (e) {}
+        try {
+          if (window.matchMedia('(pointer: coarse)').matches) root.classList.add('touch')
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 48px; color: #e8ecef; background: #0b0e11; font-family: sans-serif">
+        本站需要启用 JavaScript 才能浏览剧情档案。
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+/* ============================================================
+   设计令牌
+   参考需求：背景约 #0B0E11，次级面板约 #181D23，正文 #E8ECEF，强调 #42DDE5
+   ============================================================ */
+:root {
+  --bg: #0b0e11;
+  --bg-deep: #07090c;
+  --bg-soft: #0e1317;
+  --panel: #181d23;
+  --panel-2: #12171c;
+  --panel-3: #0d1216;
+
+  --line: rgba(232, 236, 239, 0.11);
+  --line-soft: rgba(232, 236, 239, 0.06);
+  --line-strong: rgba(232, 236, 239, 0.24);
+
+  --text: #e8ecef;
+  --text-dim: #a7b2ba;
+  --text-mute: #6d7982;
+
+  --accent: #42dde5;
+  --accent-soft: rgba(66, 221, 229, 0.14);
+  --accent-line: rgba(66, 221, 229, 0.42);
+  --warm: #d9c08a;
+  --danger: #c2705a;
+  --ok: #7fc7a4;
+
+  --paper: #ece7dd;
+  --paper-2: #e3ddd1;
+  --paper-text: #191a1b;
+  --paper-muted: #5d6165;
+  --paper-line: rgba(25, 26, 27, 0.16);
+
+  --font-sans: "Inter", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Source Han Sans SC", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Cascadia Mono", Consolas, monospace;
+
+  --header-h: 80px;
+  --footer-h: 46px;
+  --page-pad: clamp(18px, 3.4vw, 56px);
+  --radius: 2px;
+  --radius-lg: 4px;
+
+  --shadow-1: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 64px;
+    --footer-h: 44px;
+  }
+}
